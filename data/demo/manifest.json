@@ -1,0 +1,98 @@
+{
+  "version": "1.0.0",
+  "description": "Oneira 离线演示容灾数据：预置 5 张图（首版 + 3 层探索 + 1 微调），含语义标签 + 探索路径预设 + 完整四维度心理分析",
+  "generatedAt": "2026-07-30",
+  "images": {
+    "v0_initial": {
+      "url": "/generated/dream_1785334374051_nvnzob.png",
+      "prompt": "我在一片深蓝色的海面上漂浮，远处月亮很亮，水面有薄雾",
+      "semanticTags": {
+        "scene": "夜海月色",
+        "emotion": "宁静/神秘",
+        "elements": ["大海", "月亮", "薄雾", "天空"],
+        "elementPositions": [
+          { "name": "月亮", "region": "top" },
+          { "name": "大海", "region": "center" },
+          { "name": "薄雾", "region": "center" },
+          { "name": "天空", "region": "top" }
+        ]
+      }
+    },
+    "v1_refine": {
+      "url": "/generated/dream_1785414389517_rcvh0s.png",
+      "prompt": "在原画面基础上加上远处一艘黑色小船的剪影",
+      "semanticTags": {
+        "scene": "夜海月色带孤舟",
+        "emotion": "宁静/孤独",
+        "elements": ["大海", "月亮", "薄雾", "黑船剪影", "天空"],
+        "elementPositions": [
+          { "name": "月亮", "region": "top" },
+          { "name": "黑船剪影", "region": "center" },
+          { "name": "大海", "region": "bottom" }
+        ]
+      }
+    },
+    "e0_from_v0_sea": {
+      "url": "/generated/dream_1785415558619_w500ok.png",
+      "prompt": "深入探索画面中的大海，镜头拉近，沉入深海，光线穿过水面",
+      "element": "大海",
+      "parentVersion": "v0_initial"
+    },
+    "e1_from_e0_fish": {
+      "url": "/generated/dream_1785328029525_j9offj.png",
+      "prompt": "深入探索画面中的小鱼群，镜头拉近，呈现鱼群在深海中游弋的子梦境",
+      "element": "小鱼群",
+      "parentVersion": "v0_initial",
+      "parentExplore": "e0_from_v0_sea"
+    },
+    "e2_from_e1_light": {
+      "url": "/generated/dream_1785413766728_h5pp59.png",
+      "prompt": "深入探索画面中的光斑，镜头拉近，呈现光斑在深海中折射的子梦境",
+      "element": "光斑",
+      "parentVersion": "v0_initial",
+      "parentExplore": "e1_from_e0_fish"
+    }
+  },
+  "explorePath": {
+    "baseVersionId": "v0_initial",
+    "nodes": [
+      {
+        "id": "e0_from_v0_sea",
+        "element": "大海",
+        "explorePrompt": "沉入深海，光线穿过水面",
+        "imageUrl": "/generated/dream_1785415558619_w500ok.png"
+      },
+      {
+        "id": "e1_from_e0_fish",
+        "element": "小鱼群",
+        "explorePrompt": "鱼群在深海中游弋",
+        "imageUrl": "/generated/dream_1785328029525_j9offj.png"
+      },
+      {
+        "id": "e2_from_e1_light",
+        "element": "光斑",
+        "explorePrompt": "光斑在深海中折射",
+        "imageUrl": "/generated/dream_1785413766728_h5pp59.png"
+      }
+    ]
+  },
+  "elementClickMap": {
+    "v0_initial": {
+      "大海": "e0_from_v0_sea",
+      "月亮": "e0_from_v0_sea",
+      "薄雾": "e0_from_v0_sea"
+    },
+    "e0_from_v0_sea": {
+      "小鱼群": "e1_from_e0_fish",
+      "光斑": "e2_from_e1_light",
+      "深海": "e1_from_e0_fish"
+    },
+    "e1_from_e0_fish": {
+      "光斑": "e2_from_e1_light",
+      "鱼群": "e2_from_e1_light"
+    },
+    "e1_from_e0_fish_alt": {
+      "光斑": "e2_from_e1_light"
+    }
+  }
+}
