@@ -110,7 +110,7 @@ export function Onboarding({ force = false, onModeSelected }: OnboardingProps) {
     <Modal
       open={open}
       onClose={handleClose}
-      title={step === "welcome" ? "欢迎进入 Oneira" : "选择相处方式"}
+      title={step === "welcome" ? "欢迎使用 AI梦境还原器" : "选择相处方式"}
       closeOnBackdrop={false}
       maxWidth="max-w-md"
       showCloseButton={step !== "mode"}

@@ -65,7 +65,7 @@ export function DreamArchive({ currentProjectId, onOpenProject, onCreateProject,
   const importProject = async (file: File) => {
     try {
       const parsed = validateProject(JSON.parse(await file.text()));
-      if (!parsed) throw new Error("文件不是有效的 Oneira 档案");
+      if (!parsed) throw new Error("文件不是有效的 AI梦境还原器 档案");
       const imported = { ...parsed, id: `${parsed.id}-imported-${Date.now()}`, updatedAt: new Date().toISOString() };
       await saveProject(imported);
       await refresh();

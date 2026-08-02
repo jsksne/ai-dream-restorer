@@ -18,7 +18,7 @@ const notoSansSC = Noto_Sans_SC({
 });
 
 export const metadata: Metadata = {
-  title: "Oneira — AI梦境还原器",
+  title: "AI梦境还原器",
   description: "通过流式图像生成与版本树微调，还原你记忆中的梦境",
 };
 

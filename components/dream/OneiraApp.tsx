@@ -296,10 +296,10 @@ export function OneiraApp() {
             className="text-2xl font-bold tracking-wide text-gradient-lavender"
             style={{ fontFamily: "var(--font-serif), serif" }}
           >
-            Oneira
+            AI梦境还原器
           </h1>
           <p className="text-xs text-[color:var(--foreground-subtle)] tracking-widest">
-            AI 梦境还原器 · 无限探索
+            无限探索
           </p>
         </div>
         <div className="flex items-center gap-3">
